@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500;600&family=Source+Sans+Pro:wght@400;700&display=swap');
+/* style reset */
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+:root {
+    --primary-color:#4ecdc4;
+    --primary-variant:#2ec4b6;
+    --secondary-color:#e71d36;
+    --on-primary:#011627;
+    --on-background:#011627;
+    --on-background-alt:rgba(1,22,39,0.7);
+    --backgroud:#fdfffc;
+    --box-shadow:0 5px 20px 1px rgba(0,0,0,0.5);
+    scroll-behavior: smooth;
+}
+[data-theme="dark"] {
+    --primary-color:#4a4e69;
+    --primary-variant:#f0efeb;
+    --secondary-color:#d90429;
+    --on-primary:#edf2f4;
+    --on-background:#edf2f4;
+    --on-background-alt:rgba(1,22,39,0.7);
+    --backgroud:#22223b;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--on-background);
+    background-color: var(--backgroud);
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232ec4b6' fill-opacity='0.3' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+a {
+    text-decoration: none;
+    color:inherit;
+    color: var(--primary-color);
+}
+a:hover,
+a:focus {
+    border-bottom: 3px solid;
+}
+ul {
+    list-style-type: none;
+}
+
+#navbar {
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    padding:0.8rem 1.2rem;
+    background: #edf2f4;
+}
+#navbar ul {
+    display:flex;
+}
+#navbar ul li {
+    margin:0 1.2rem;
+}
+.fas{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 3.5rem;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 5px;
+    background-color: silver; 
+    margin:5px;
+}
+input[type="checkbox"] {
+    width:80px;
+    height:40px;
+    appearance: none;
+    background:#c6c6c6;
+    outline:none;
+    border-radius: 20px;
+    /* transition: .3s; */
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+.checkbox {
+    position: relative;
+}
+
+input:checked[type="checkbox"] {
+    background: var(--primary-color);
+    /* position: relative; */
+    
+}
+input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    width:40px;
+    height: 40px;
+    border-radius:20px;
+    top:0;
+    left:0;
+    background-color: white;
+    transition: .3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+
+}
+input:checked[type="checkbox"]:before { 
+    left:40px;
+}
+
+#hero-section,#about-section,#project-section,#contact-section {
+    height: 100vh;
+}
+#hero-section h1,#about-section h1,#project-section h1,#contact-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: Kaushan Script,sans-serif;
+}
+#hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-container {
+    display: flex;
+    margin-top: 1.5rem;
+}
+.btn-container button {
+    width: 8rem;
+    height: 3rem;
+    margin: 0 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: normal;
+    transition: transform 0.3s;
+    box-shadow: var(--box-shadow);
+    color: var(--on-background-alt);
+    font-weight: bold;
+    filter: brightness(110%);
+
+}
+#primary {
+    background: var(--primary-color);
+    color: var(--on-primary);
+}
+#secondary {
+    background: var(--secondary-color);
+    color: var(--on-primary);
+}
+
+.btn-container button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--box-shadow);
+}
+#about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.about-container .card {
+    width: 60%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+}
+.card-header {
+    font-size: 1.3rem;
+}
+.card p {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+
+.card-header h3 {
+    text-align: center;
+    color: var(--on-background-alt);
+
+}
+
+#project-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-container {
+    display: flex;
+    margin-top: 20px;
+
+}
+.card-container .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+    padding: 0.5rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 20px;
+}
+.card-container .card:hover {
+    transform: scale(1.01);
+}
+.card-container .card p {
+    margin-top: 15px;
+}
+
+#contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#contact-section h1 {
+    font-size: 3.3rem;
+}
+
+.follow {
+    display: flex;
+    width: 100%;
+    margin-top: 1.7rem;
+    justify-content: space-around;
+}
+.fab {
+    font-size: 3.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+.fab:hover {
+    transform: scale(1.1);
+    filter: brightness(110%);
+}
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+    #navbar {
+        font-size:1rem;
+        flex-wrap: wrap;
+
+    }
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+    #navbar ul li {
+        margin:0 0.8rem;
+    }
+    input[type="checkbox"] {
+        width:60px;
+        height:30px;
+        border-radius: 10px;
+        
+    }
+    
+    input[type="checkbox"]:before {
+        width:30px;
+        height: 30px;
+        border-radius:10px;
+        
+    
+    }
+    #hero-section h1,#about-section h1,#project-section h1,#contact-section h1 {
+        font-size: 2rem;
+    }
+    .btn-container button {
+        width: 7rem;
+        height: 3rem;
+    }
+    #about-section h1 {
+        text-align: center;
+    }
+    .about-container .card {
+        width: 100%;
+        padding: 0.8rem;
+        flex-direction: column;
+    }
+    .card p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    #project-section {
+        height: auto;
+        margin-top: 2.5rem;
+    }
+    .card-container {
+        flex-wrap: wrap;
+    }
+    
+    
+}
